@@ -1,0 +1,33 @@
+@mixin font ($color, $fontW) {
+    font-size: $mainfontsize;
+    font-weight: $fontW;
+    font-family: Arial, Helvetica, sans-serif;
+    color: $color;
+}
+@mixin padd($padd...){
+    padding: $padd;
+}
+@mixin link($link, $hover, $active,$visited){
+    color:$link;
+    &:hover{
+        color:$hover;
+    }
+    &:active{
+        color:$active;
+    }
+    &:visited{
+        color:$visited;
+    }
+}
+@mixin grid ($cols, $margin){
+    float: left;
+    background: rgb(185, 51, 51);
+    margin-right: $margin;
+    margin-top: $margin;
+    height: 150px;
+    width: ((100%-(($cols-1)*$margin))/$cols);
+    
+    &:not-child(#{$cols}n){
+        margin-right: 0px;
+    }
+}
